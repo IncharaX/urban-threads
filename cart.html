@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UrbanThreads Cart</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f7fa;
+      color: #263238;
+      line-height: 1.6;
+    }
+
+    .header {
+      background-color: #12232e;
+      color: #ffffff;
+      padding: 24px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .store-name {
+      font-size: 30px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-menu a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 8px 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-menu a:hover {
+      color: #ffca7a;
+      border-bottom-color: #ffca7a;
+    }
+
+    .cart-page {
+      width: min(1050px, 92%);
+      margin: 42px auto;
+      display: block;
+    }
+
+    .cart-form {
+      background-color: #ffffff;
+      border: 1px solid #dfe7ee;
+      border-radius: 8px;
+      padding: 26px;
+      box-shadow: 0 8px 18px rgba(18, 35, 46, 0.08);
+    }
+
+    .cart-form h1 {
+      color: #12232e;
+      margin-bottom: 10px;
+    }
+
+    .cart-form p {
+      color: #607d8b;
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #263238;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid #cfd8dc;
+      border-radius: 6px;
+      padding: 11px 12px;
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      outline: none;
+    }
+
+    .form-group textarea {
+      min-height: 95px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #0f7b6c;
+      box-shadow: 0 0 0 3px rgba(15, 123, 108, 0.12);
+    }
+
+    .place-order-button {
+      width: 100%;
+      border: none;
+      background-color: #ff9f1c;
+      color: #17252a;
+      padding: 13px 16px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 6px;
+    }
+
+    .place-order-button:hover {
+      background-color: #f08c00;
+      color: #ffffff;
+    }
+
+    .footer {
+      background-color: #12232e;
+      color: #d9e4ea;
+      text-align: center;
+      padding: 26px 8%;
+      margin-top: 44px;
+    }
+
+    @media (max-width: 760px) {
+      .header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .nav-menu {
+        justify-content: center;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="store-name">UrbanThreads</div>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#men">Men</a></li>
+        <li><a href="index.html#women">Women</a></li>
+        <li><a href="index.html#signin">Sign In</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="cart-page">
+    <section class="cart-form">
+      <h1>Complete Your Cart Details</h1>
+      <p>Fill in your details to place an order with UrbanThreads.</p>
+
+      <form>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+          </div>
+
+          <div class="form-group">
+            <label for="product">Select Product</label>
+            <select id="product" name="product">
+              <option>Classic Cotton T-Shirt</option>
+              <option>Denim Jacket</option>
+              <option>Formal Shirt</option>
+              <option>Comfort Hoodie</option>
+              <option>Casual Sneakers</option>
+              <option>Summer Dress</option>
+              <option>Leather Jacket</option>
+              <option>Women's Kurta Set</option>
+              <option>Knitted Sweater</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="size">Select Size</label>
+            <select id="size" name="size">
+              <option>Small</option>
+              <option>Medium</option>
+              <option>Large</option>
+              <option>Extra Large</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Delivery Address</label>
+          <textarea id="address" name="address" placeholder="Enter your complete delivery address"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="Enter your city">
+          </div>
+
+          <div class="form-group">
+            <label for="pincode">Pincode</label>
+            <input type="text" id="pincode" name="pincode" placeholder="Enter pincode">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="payment">Payment Method</label>
+          <select id="payment" name="payment">
+            <option>Cash on Delivery</option>
+            <option>UPI Payment</option>
+            <option>Credit or Debit Card</option>
+          </select>
+        </div>
+
+        <button class="place-order-button" type="submit">Place Order</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 UrbanThreads Clothing Store. All rights reserved.</p>
+  </footer>
+</body>
+</html>
